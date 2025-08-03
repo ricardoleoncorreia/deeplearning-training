@@ -1,134 +1,129 @@
-# Jupyter Notebook
-.ipynb_checkpoints
-*/.ipynb_checkpoints/*
+# Jupyter Notebook (in sub-projects)
+**/.ipynb_checkpoints/
 
-# IPython
-profile_default/
-ipython_config.py
+# IPython (in sub-projects)
+**/profile_default/
+**/ipython_config.py
 
-# Virtual Environments
-venv/
-env/
-ENV/
-env.bak/
-venv.bak/
-.venv/
+# Virtual Environments (in sub-projects)
+**/venv/
+**/env/
+**/ENV/
+**/.venv/
+**/env.bak/
+**/venv.bak/
 
-# Conda environments
-conda-meta/
+# Conda environments (in sub-projects)
+**/conda-meta/
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+# Python (in sub-projects)
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/*.so
+**/.Python
+**/build/
+**/develop-eggs/
+**/dist/
+**/downloads/
+**/eggs/
+**/.eggs/
+**/lib/
+**/lib64/
+**/parts/
+**/sdist/
+**/var/
+**/wheels/
+**/pip-wheel-metadata/
+**/share/python-wheels/
+**/*.egg-info/
+**/.installed.cfg
+**/*.egg
+**/MANIFEST
 
-# PyInstaller
-*.manifest
-*.spec
+# PyInstaller (in sub-projects)
+**/*.manifest
+**/*.spec
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
+# Unit test / coverage reports (in sub-projects)
+**/htmlcov/
+**/.tox/
+**/.nox/
+**/.coverage
+**/.coverage.*
+**/.cache
+**/nosetests.xml
+**/coverage.xml
+**/*.cover
+**/*.py,cover
+**/.hypothesis/
+**/.pytest_cache/
 
-# Translations
-*.mo
-*.pot
+# Translations (in sub-projects)
+**/*.mo
+**/*.pot
 
-# Django
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+# Django (in sub-projects)
+**/*.log
+**/local_settings.py
+**/db.sqlite3
+**/db.sqlite3-journal
 
-# Flask
-instance/
-.webassets-cache
+# Flask (in sub-projects)
+**/instance/
+**/.webassets-cache
 
-# Scrapy
-.scrapy
+# Scrapy (in sub-projects)
+**/.scrapy
 
-# Sphinx documentation
-docs/_build/
+# Sphinx documentation (in sub-projects)
+**/docs/_build/
 
-# PyBuilder
-target/
+# PyBuilder (in sub-projects)
+**/target/
 
-# Jupyter Notebook outputs (if you want to exclude outputs)
-# Uncomment the next line if you want to exclude all notebook outputs
-# *.ipynb
+# pyenv (in sub-projects)
+**/.python-version
 
-# pyenv
-.python-version
+# pipenv (in sub-projects)
+**/Pipfile.lock
 
-# pipenv
-Pipfile.lock
+# PEP 582 (in sub-projects)
+**/__pypackages__/
 
-# PEP 582
-__pypackages__/
+# Celery (in sub-projects)
+**/celerybeat-schedule
+**/celerybeat.pid
 
-# Celery
-celerybeat-schedule
-celerybeat.pid
+# SageMath parsed files (in sub-projects)
+**/*.sage.py
 
-# SageMath parsed files
-*.sage.py
+# Environments (in sub-projects)
+**/.env
+**/.venv
+**/env/
+**/venv/
+**/ENV/
+**/env.bak/
+**/venv.bak/
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+# Spyder project settings (in sub-projects)
+**/.spyderproject
+**/.spyproject
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# Rope project settings (in sub-projects)
+**/.ropeproject
 
-# Rope project settings
-.ropeproject
+# mkdocs documentation (in sub-projects)
+**/site
 
-# mkdocs documentation
-/site
+# mypy (in sub-projects)
+**/.mypy_cache/
+**/.dmypy.json
+**/dmypy.json
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
+# Pyre type checker (in sub-projects)
+**/.pyre/
 
 # macOS
 .DS_Store
@@ -154,3 +149,48 @@ Desktop.ini
 *.tmp
 *.temp
 ~*
+
+# Deep Learning / Data Science specific (in sub-projects)
+# Model files
+**/*.h5
+**/*.hdf5
+**/*.pkl
+**/*.pickle
+**/*.joblib
+**/*.pt
+**/*.pth
+**/*.ckpt
+**/*.pb
+**/*.tflite
+**/*.onnx
+
+# Data files (uncomment if you want to exclude datasets)
+# **/*.csv
+# **/*.json
+# **/*.parquet
+# **/*.feather
+# **/*.xlsx
+# **/*.xls
+
+# Tensorboard logs
+**/logs/
+**/runs/
+**/tb_logs/
+
+# Weights & Biases
+**/wandb/
+
+# MLflow
+**/mlruns/
+
+# Sub-project specific ignores
+# Add patterns for files/folders that should be ignored in ALL sub-projects
+**/checkpoints/
+**/models/
+**/output/
+**/outputs/
+**/results/
+**/cache/
+**/tmp/
+**/temp/
+**/.cache/
