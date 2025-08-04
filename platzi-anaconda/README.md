@@ -1,6 +1,39 @@
 # Python Virtual Environment Guide for macOS
 
-This guide explains how to create, activate, and deactivate Python virtual environments on macOS using both the `python3` command and `conda`.
+## Introduction
+
+Project is based on Platzi's comprehensive [Curso de Entornos Virtuales con Anaconda y Jupyter](https://platzi.com/cursos/anaconda-jupyter) course. It provides hands-on experience with Python data science tools and environments.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Creating a Virtual Environment](#creating-a-virtual-environment)
+- [Activating the Virtual Environment](#activating-the-virtual-environment)
+- [Installing Packages](#installing-packages)
+- [Conda Channels](#conda-channels)
+  - [Default Channels](#default-channels)
+  - [Using Specific Channels](#using-specific-channels)
+- [Listing Installed Packages](#listing-installed-packages)
+- [Creating Requirements File](#creating-requirements-file)
+- [CookieCutter: Project Templating Tool](#cookiecutter-project-templating-tool)
+  - [What is CookieCutter](#what-is-cookiecutter)
+  - [Benefits of Using CookieCutter](#benefits-of-using-cookiecutter)
+  - [Installing CookieCutter](#installing-cookiecutter)
+  - [Using CookieCutter](#using-cookiecutter)
+- [Deactivating the Virtual Environment](#deactivating-the-virtual-environment)
+- [Deleting a Virtual Environment](#deleting-a-virtual-environment)
+- [Cleaning Cache](#cleaning-cache)
+- [Installing and Running Jupyter Notebook](#installing-and-running-jupyter-notebook)
+- [Jupyter Notebook Magic Commands](#jupyter-notebook-magic-commands)
+  - [Common Magic Commands](#common-magic-commands)
+  - [Example Usage](#example-usage)
+- [Working with Git and Jupyter Notebooks - nbdime](#working-with-git-and-jupyter-notebooks---nbdime)
+  - [Installing nbdime](#installing-nbdime)
+  - [Git Integration Setup](#git-integration-setup)
+  - [Common nbdime Commands](#common-nbdime-commands)
+  - [Example Usage](#example-usage-1)
+  - [Best Practices for Notebooks and Git](#best-practices-for-notebooks-and-git)
+- [Best Practices](#best-practices)
 
 ## Prerequisites
 
@@ -16,30 +49,16 @@ conda --version
 
 ## Creating a Virtual Environment
 
-### Using python3 venv
-
-To create a virtual environment, use the following command:
-
 ```bash
-python3 -m venv your_env_name
-```
-
-This will create a new directory with the environment name containing all the necessary files for the virtual environment.
-
-### Using conda
-
-```bash
-conda create --name your_env_name python=3.11
+# Using python3 venv / Using conda
+python3 -m venv your_env_name / conda create --name your_env_name python=3.11
 ```
 
 ## Activating the Virtual Environment
 
-### For python3 venv environments
-
-To activate the virtual environment on macOS, use:
-
 ```bash
-source your_env_name/bin/activate
+# For python3 venv / For conda environments
+source your_env_name/bin/activate / conda activate your_env_name
 ```
 
 When activated, you'll see the environment name in parentheses at the beginning of your terminal prompt:
@@ -47,29 +66,14 @@ When activated, you'll see the environment name in parentheses at the beginning 
 (myproject_env) username@MacBook-Pro:~/your-project$
 ```
 
-### For conda environments
-
-```bash
-conda activate your_env_name
-```
-
 ## Installing Packages
 
-### For python3 venv environments
-
-While your virtual environment is activated, you can install packages using pip:
-
 ```bash
-pip install package_name
+# For python3 venv / For conda environments
+pip install package_name / conda install package_name
 ```
 
 These packages will be installed only in the virtual environment, keeping them separate from your system's global Python installation.
-
-### For conda environments
-
-```bash
-conda install package_name
-```
 
 ## Conda Channels
 
@@ -98,42 +102,55 @@ conda config --set channel_priority strict
 
 ## Listing Installed Packages
 
-### For python3 venv environments
-
-To see what packages are installed in your virtual environment:
-
 ```bash
-pip list
-```
-
-### For conda environments
-
-```bash
-conda list
+# For python3 venv / For conda environments
+pip list / conda list
 ```
 
 ## Creating Requirements File
 
-### For python3 venv environments
-
-To save your project dependencies:
-
 ```bash
+# For python3 venv environments
 pip freeze > requirements.txt
-```
-
-To install dependencies from a requirements file:
-
-```bash
 pip install -r requirements.txt
-```
 
-### For conda environments
-
-```bash
+# For conda environments
 conda env export > environment.yml
 conda env create -f environment.yml
 ```
+
+## CookieCutter: Project Templating Tool
+
+### What is CookieCutter
+
+CookieCutter is a command-line utility that creates projects from project templates (called "cookiecutters"). It's particularly useful for data science projects as it helps you start with a well-organized, standardized project structure that follows best practices.
+
+### Benefits of Using CookieCutter
+
+1. **Consistent Project Structure**: Ensures all your projects follow the same organization pattern
+2. **Best Practices Built-in**: Templates include industry-standard folder structures and configurations
+3. **Time Saving**: No need to manually create directories, files, and boilerplate code
+4. **Customizable**: Templates can be customized with project-specific information during creation
+5. **Version Control Ready**: Templates often include `.gitignore`, `README.md`, and other VCS essentials
+6. **Reproducible Research**: Standardized structure makes it easier to share and reproduce work
+7. **Team Collaboration**: Everyone on the team uses the same project structure
+
+### Installing CookieCutter
+
+```bash
+# Using pip (venv) / Using conda
+pip install cookiecutter / conda install -c conda-forge cookiecutter-data-science
+```
+
+### Using CookieCutter
+
+Once installed, you can create a new data science project using the Cookiecutter Data Science template:
+
+```bash
+ccds
+```
+
+The `ccds` command is a convenient shortcut specifically for the Cookiecutter Data Science template when installed through conda-forge.
 
 ## Deactivating the Virtual Environment
 
@@ -147,88 +164,36 @@ The environment name will disappear from your terminal prompt, indicating you're
 
 ## Deleting a Virtual Environment
 
-### For python3 venv environments
-
-To completely remove a virtual environment, you simply delete its directory. Make sure the environment is deactivated first:
-
 ```bash
-# First, deactivate the environment if it's active
-deactivate
+# For python3 venv environments
+deactivate && rm -rf your_env_name
 
-# Then delete the environment directory
-rm -rf your_env_name
-```
-
-### For conda environments
-
-```bash
-# First, deactivate the environment if it's active
-conda deactivate
-
-# Then remove the environment
-conda env remove --name your_env_name
+# For conda environments
+conda deactivate && conda env remove --name your_env_name
 ```
 
 **Warning:** This action is irreversible. Make sure you have a `requirements.txt` file or `environment.yml` file saved before deleting the environment.
 
 ## Cleaning Cache
 
-### For python3 venv environments
-
-To clean pip cache and free up disk space:
-
 ```bash
-# Clean pip cache
+# For python3 venv environments
 pip cache purge
-
-# Remove pip cache directory
 rm -rf ~/.cache/pip
-```
 
-### For conda environments
-
-To clean conda cache:
-
-```bash
-# Clean all conda caches
+# For conda environments
 conda clean --all
-
-# Clean only package cache
-conda clean --packages
-
-# Clean only index cache
-conda clean --index-cache
+conda clean --packages  # Clean only package cache
+conda clean --index-cache  # Clean only index cache
 ```
 
 ## Installing and Running Jupyter Notebook
 
-### For python3 venv environments
-
-After activating your virtual environment, install Jupyter Notebook:
-
 ```bash
-# Activate your environment first
-source your_env_name/bin/activate
+# For python3 venv / For conda environments
+pip install jupyter / conda install jupyter
 
-# Install Jupyter Notebook
-pip install jupyter
-
-# Launch Jupyter Notebook
-jupyter notebook
-```
-
-### For conda environments
-
-After activating your conda environment, install Jupyter Notebook:
-
-```bash
-# Activate your environment first
-conda activate your_env_name
-
-# Install Jupyter Notebook
-conda install jupyter
-
-# Launch Jupyter Notebook
+# Launch Jupyter Notebook (same for both)
 jupyter notebook
 ```
 
@@ -278,11 +243,8 @@ print("Hello, World!")
 ### Installing nbdime
 
 ```bash
-# Using pip
-pip install nbdime
-
-# Using conda
-conda install nbdime
+# Using pip / Using conda
+pip install nbdime / conda install nbdime
 ```
 
 ### Git Integration Setup
