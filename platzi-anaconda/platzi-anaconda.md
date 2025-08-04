@@ -71,6 +71,31 @@ These packages will be installed only in the virtual environment, keeping them s
 conda install package_name
 ```
 
+## Conda Channels
+
+Conda channels are repositories where packages are stored. When you install a package, conda searches through configured channels to find it.
+
+### Default Channels
+
+- **default**: The main Anaconda repository maintained by Anaconda Inc., contains curated packages
+- **conda-forge**: Community-driven channel with the largest collection of packages, often more up-to-date
+
+### Using Specific Channels
+
+```bash
+# Install from conda-forge channel
+conda install -c conda-forge package_name
+
+# Install from default channel (explicitly)
+conda install -c defaults package_name
+
+# Add conda-forge as a permanent channel (recommended)
+conda config --add channels conda-forge
+
+# Set channel priority (conda-forge first, then defaults)
+conda config --set channel_priority strict
+```
+
 ## Listing Installed Packages
 
 ### For python3 venv environments
