@@ -8,7 +8,7 @@ Below is a list of projects and their corresponding documentation:
 
 ### Current Projects
 
-- [Platzi Anaconda Course](./platzi-anaconda/platzi-anaconda.md) - Python virtual environment management with venv and conda
+- [Platzi Anaconda Course](./platzi-anaconda/README.md) - Python virtual environment management with venv and conda
 
 ## Getting Started
 
