@@ -15,14 +15,14 @@ Project is based on Platzi's comprehensive [Curso de Entornos Virtuales con Anac
   - [Using Specific Channels](#using-specific-channels)
 - [Listing Installed Packages](#listing-installed-packages)
 - [Creating Requirements File](#creating-requirements-file)
+- [Deactivating the Virtual Environment](#deactivating-the-virtual-environment)
+- [Deleting a Virtual Environment](#deleting-a-virtual-environment)
+- [Cleaning Cache](#cleaning-cache)
 - [CookieCutter: Project Templating Tool](#cookiecutter-project-templating-tool)
   - [What is CookieCutter](#what-is-cookiecutter)
   - [Benefits of Using CookieCutter](#benefits-of-using-cookiecutter)
   - [Installing CookieCutter](#installing-cookiecutter)
   - [Using CookieCutter](#using-cookiecutter)
-- [Deactivating the Virtual Environment](#deactivating-the-virtual-environment)
-- [Deleting a Virtual Environment](#deleting-a-virtual-environment)
-- [Cleaning Cache](#cleaning-cache)
 - [Installing and Running Jupyter Notebook](#installing-and-running-jupyter-notebook)
 - [Jupyter Notebook Magic Commands](#jupyter-notebook-magic-commands)
   - [Common Magic Commands](#common-magic-commands)
@@ -119,39 +119,6 @@ conda env export > environment.yml
 conda env create -f environment.yml
 ```
 
-## CookieCutter: Project Templating Tool
-
-### What is CookieCutter
-
-CookieCutter is a command-line utility that creates projects from project templates (called "cookiecutters"). It's particularly useful for data science projects as it helps you start with a well-organized, standardized project structure that follows best practices.
-
-### Benefits of Using CookieCutter
-
-1. **Consistent Project Structure**: Ensures all your projects follow the same organization pattern
-2. **Best Practices Built-in**: Templates include industry-standard folder structures and configurations
-3. **Time Saving**: No need to manually create directories, files, and boilerplate code
-4. **Customizable**: Templates can be customized with project-specific information during creation
-5. **Version Control Ready**: Templates often include `.gitignore`, `README.md`, and other VCS essentials
-6. **Reproducible Research**: Standardized structure makes it easier to share and reproduce work
-7. **Team Collaboration**: Everyone on the team uses the same project structure
-
-### Installing CookieCutter
-
-```bash
-# Using pip (venv) / Using conda
-pip install cookiecutter / conda install -c conda-forge cookiecutter-data-science
-```
-
-### Using CookieCutter
-
-Once installed, you can create a new data science project using the Cookiecutter Data Science template:
-
-```bash
-ccds
-```
-
-The `ccds` command is a convenient shortcut specifically for the Cookiecutter Data Science template when installed through conda-forge.
-
 ## Deactivating the Virtual Environment
 
 To deactivate the virtual environment and return to your system's global Python environment, simply run:
@@ -186,6 +153,39 @@ conda clean --all
 conda clean --packages  # Clean only package cache
 conda clean --index-cache  # Clean only index cache
 ```
+
+## CookieCutter: Project Templating Tool
+
+### What is CookieCutter
+
+CookieCutter is a command-line utility that creates projects from project templates (called "cookiecutters"). It's particularly useful for data science projects as it helps you start with a well-organized, standardized project structure that follows best practices.
+
+### Benefits of Using CookieCutter
+
+1. **Consistent Project Structure**: Ensures all your projects follow the same organization pattern
+2. **Best Practices Built-in**: Templates include industry-standard folder structures and configurations
+3. **Time Saving**: No need to manually create directories, files, and boilerplate code
+4. **Customizable**: Templates can be customized with project-specific information during creation
+5. **Version Control Ready**: Templates often include `.gitignore`, `README.md`, and other VCS essentials
+6. **Reproducible Research**: Standardized structure makes it easier to share and reproduce work
+7. **Team Collaboration**: Everyone on the team uses the same project structure
+
+### Installing CookieCutter
+
+```bash
+# Using pip (venv) / Using conda
+pip install cookiecutter / conda install -c conda-forge cookiecutter-data-science
+```
+
+### Using CookieCutter
+
+Once installed, you can create a new data science project using the Cookiecutter Data Science template:
+
+```bash
+ccds
+```
+
+The `ccds` command is a convenient shortcut specifically for the Cookiecutter Data Science template when installed through conda-forge.
 
 ## Installing and Running Jupyter Notebook
 
