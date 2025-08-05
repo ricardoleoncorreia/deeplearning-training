@@ -9,6 +9,7 @@ Below is a list of projects and their corresponding documentation:
 ### Current Projects
 
 - [Platzi Anaconda Course](./platzi-anaconda/README.md) - Python virtual environment management with venv and conda
+- [Platzi Langchain Course](./platzi-langchain/README.md) - Large Language Model (LLM) applications with Langchain
 
 ## Getting Started
 
