@@ -19,6 +19,14 @@ requirements:
 
 
 
+## Update environment.yml with current conda environment
+.PHONY: update-environment-yml
+update-environment-yml:
+	conda env export --no-builds > environment.yml
+	@echo ">>> environment.yml updated with the current conda environment."
+
+
+
 ## Delete all compiled Python files
 .PHONY: clean
 clean:
@@ -38,8 +46,15 @@ format:
 	ruff check --fix
 	ruff format
 
+## Start Ollama service
+.PHONY: start-ollama
+start-ollama:
+	brew services start ollama
 
-
+## Stop Ollama service
+.PHONY: stop-ollama
+stop-ollama:
+	brew services stop ollama
 
 
 ## Set up Python interpreter environment
