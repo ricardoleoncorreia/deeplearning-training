@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "deeplearningai_langchain_chatwithyourdata"
+version = "0.0.1"
+description = "A short description of the project."
+authors = [
+  { name = "Ricardo Leon Correia" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "~=3.13.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["deeplearningai_langchain_chatwithyourdata"]
+include = ["pyproject.toml", "deeplearningai_langchain_chatwithyourdata/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["deeplearningai_langchain_chatwithyourdata"]
+force-sort-within-sections = true
+
