@@ -1,63 +1,70 @@
-# deeplearningai-langchain
+# LangChain for LLM Application Development
 
-Completion Certificate can be found in [link](https://learn.deeplearning.ai/accomplishments/175a2b00-0cee-4f73-8789-3400676a1fef)
+## Introduction
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+This project is based on DeepLearning.AI's comprehensive [LangChain for LLM Application Development](https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/) course. It provides hands-on experience with building Large Language Model (LLM) applications using the LangChain framework.
 
-A short description of the project.
+## Table of Contents
 
-## Project Organization
+- [Prerequisites](#prerequisites)
+- [Environment Setup](#environment-setup)
+  - [Creating a Virtual Environment](#creating-a-virtual-environment)
+  - [Activating the Virtual Environment](#activating-the-virtual-environment)
+- [Course Modules](#course-modules)
+- [Installing Dependencies](#installing-dependencies)
+- [Getting Help](#getting-help)
 
+## Prerequisites
+
+Make sure you have Python 3.8+ installed on your macOS system. You can check by running:
+```bash
+python3 --version
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         deeplearningai_langchain and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── deeplearningai_langchain   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes deeplearningai_langchain a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+
+For conda environments, make sure you have Anaconda or Miniconda installed:
+```bash
+conda --version
 ```
+
+## Environment Setup
+
+### Creating a Virtual Environment
+
+```bash
+# Using conda
+conda create --name deeplearningai-langchain python=3.13
+```
+
+### Activating the Virtual Environment
+
+```bash
+# Activate the conda environment
+conda activate deeplearningai-langchain
+```
+
+## Course Modules
+
+This project covers the following key areas of LangChain development:
+
+1. **Models, Prompts and Parsers** - Understanding LLM models, crafting effective prompts, and parsing outputs
+2. **Memory** - Implementing conversation memory for chatbots and interactive applications
+3. **Chains** - Building sequential operations and complex workflows
+4. **Question Answering** - Creating Q&A systems over documents and knowledge bases
+5. **Evaluation** - Testing and evaluating LLM application performance
+6. **Agents** - Building autonomous agents that can use tools and make decisions
+
+## Installing Dependencies
+
+```bash
+# Install from environment.yml
+conda env create -f environment.yml
+conda activate deeplearningai-langchain
+```
+
+### Getting Help
+
+- Check the [LangChain Documentation](https://python.langchain.com/)
+- Visit the [LangChain GitHub Repository](https://github.com/langchain-ai/langchain)
 
 --------
 

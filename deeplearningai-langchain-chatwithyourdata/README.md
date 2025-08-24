@@ -1,63 +1,82 @@
-# deeplearningai-langchain-chatwithyourdata
+# LangChain: Chat with Your Data
 
-Completion certificate can be found in [link](https://learn.deeplearning.ai/accomplishments/670ab53d-3120-43e4-8fdc-a57d70b2b054)
+## Introduction
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+This project is based on DeepLearning.AI's comprehensive [LangChain: Chat with Your Data](https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/) course. It provides hands-on experience with building conversational AI systems that can interact with and retrieve information from your own documents and data sources.
 
-A short description of the project.
+## Table of Contents
 
-## Project Organization
+- [Prerequisites](#prerequisites)
+- [Environment Setup](#environment-setup)
+  - [Creating a Virtual Environment](#creating-a-virtual-environment)
+  - [Activating the Virtual Environment](#activating-the-virtual-environment)
+- [Course Modules](#course-modules)
+- [Installing Dependencies](#installing-dependencies)
+- [Best Practices](#best-practices)
+- [Getting Help](#getting-help)
 
+## Prerequisites
+
+Make sure you have Python 3.8+ installed on your macOS system. You can check by running:
+```bash
+python3 --version
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         deeplearningai_langchain_chatwithyourdata and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── deeplearningai_langchain_chatwithyourdata   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes deeplearningai_langchain_chatwithyourdata a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+
+For conda environments, make sure you have Anaconda or Miniconda installed:
+```bash
+conda --version
 ```
+
+## Environment Setup
+
+### Creating a Virtual Environment
+
+```bash
+# Using conda
+conda create --name deeplearningai-langchain-chatwithyourdata python=3.13
+```
+
+### Activating the Virtual Environment
+
+```bash
+# Activate the conda environment
+conda activate deeplearningai-langchain-chatwithyourdata
+```
+
+## Course Modules
+
+This project covers the following key areas of building chat systems with your data:
+
+1. **Document Loading** - Loading documents from various sources (PDFs, text files, web pages, etc.)
+2. **Document Splitting** - Breaking down large documents into manageable chunks for processing
+3. **Vector Stores and Embeddings** - Converting text to vector representations and storing them efficiently
+4. **Retrieval** - Finding relevant document chunks based on user queries
+5. **Question Answering** - Generating answers based on retrieved document content
+6. **Chat** - Building conversational interfaces that maintain context and memory
+
+## Installing Dependencies
+
+```bash
+# Install from environment.yml
+conda env create -f environment.yml
+conda activate deeplearningai-langchain-chatwithyourdata
+```
+
+## Best Practices
+
+1. **Chunk Size Optimization** - Experiment with different chunk sizes based on your document type
+2. **Embedding Model Selection** - Choose embeddings that work well with your domain
+3. **Vector Store Persistence** - Always persist your vector stores to avoid recomputation
+4. **Memory Management** - Implement appropriate memory strategies for long conversations
+5. **Source Attribution** - Always return source documents for transparency
+6. **Error Handling** - Implement robust error handling for document loading and processing
+7. **Performance Monitoring** - Monitor retrieval quality and response times
+8. **Security** - Sanitize user inputs and protect sensitive document content
+
+### Getting Help
+
+- Check the [LangChain Documentation](https://python.langchain.com/)
+- Visit the [LangChain GitHub Repository](https://github.com/langchain-ai/langchain)
 
 --------
 
