@@ -4,6 +4,8 @@
 
 Project is based on Platzi's comprehensive [Curso de Entornos Virtuales con Anaconda y Jupyter](https://platzi.com/cursos/anaconda-jupyter) course. It provides hands-on experience with Python data science tools and environments.
 
+Completion Certificate can be found in [link](https://platzi.com/p/ricardoleoncorreia/curso/10927-anaconda-jupyter/diploma/detalle/) 
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

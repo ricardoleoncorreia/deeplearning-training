@@ -1,5 +1,7 @@
 # deeplearningai-langchain
 
+Completion Certificate can be found in [link](https://learn.deeplearning.ai/accomplishments/175a2b00-0cee-4f73-8789-3400676a1fef)
+
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
